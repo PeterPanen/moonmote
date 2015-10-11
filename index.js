@@ -25,8 +25,11 @@ app.use(express.static('public'));
  * Routes configuration.
  */
 app.get("/", function(req, res){
-  var games = shell.exec("moonlight list", {silent: true}).output.split("\n").map(function(value){
-    return value.split(". ").length > 1 ? value.split(". ")[1] : null;
+  var games = shell.exec("moonlight list", {silent: true}).output.split("\n").filter(function(value){
+    return value.split(". ")[1];
+  });
+  games = games.filter(function(value){
+    return value !== undefined;
   });
   console.log(games[0]);
   res.render("home");
