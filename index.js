@@ -25,11 +25,11 @@ app.use(express.static('public'));
  * Routes configuration.
  */
 app.get("/", function(req, res){
-  shell.exec("moonlight list", function(code, output){
-    var lines = output.split("\n");
-    console.log(lines[1]);
-    res.render("home");
+  var games = shell.exec("moonlight list", {silent: true}).output.split("\n").map(function(value){
+    return value.split(". ")[1];
   });
+  console.log(games[1]);
+  res.render("home");
 });
 
 app.get("/games", function(req, res){
