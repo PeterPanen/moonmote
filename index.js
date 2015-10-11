@@ -25,7 +25,7 @@ app.use(express.static('public'));
  * Routes configuration.
  */
 app.get("/", function(req, res){
-  var games = shell.exec("moonlight list", {silent: true}).output.split("\n").filter(function(value){
+  var games = shell.exec("moonlight list", {silent: true}).output.split("\n").map(function(value){
     return value.split(". ")[1];
   });
   games = games.filter(function(value){
