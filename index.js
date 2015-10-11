@@ -26,9 +26,8 @@ app.use(express.static('public'));
  */
 app.get("/", function(req, res){
   shell.exec("moonlight list", function(code, output){
-    console.log(code);
-    console.log("------");
-    console.log(output);
+    var lines = output.split("\n");
+    console.log(lines[1]);
     res.render("home");
   });
 });
