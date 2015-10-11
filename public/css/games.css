@@ -7,6 +7,11 @@ html, body {
   padding: 0;
 }
 
-.thumbnail {
+.game .thumbnail {
   background-color: #cccccc;
+}
+
+.game .thumbnail .name {
+  position: absolute;
+  width: 80%;
 }
