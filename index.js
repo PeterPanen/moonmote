@@ -26,7 +26,7 @@ app.use(express.static('public'));
  */
 app.get("/", function(req, res){
   var games = shell.exec("moonlight list", {silent: true}).output.split("\n").map(function(value){
-    return value.split(". ").length ? value.split(". ")[1] : false;
+    return value.split(". ").length ? value.split(". ")[1] : null;
   });
   console.log(games[0]);
   res.render("home");
