@@ -1,0 +1,29 @@
+@import url(bootstrap.min.css);
+@import url(font-awesome.min.css);
+
+html, body {
+  height: 100%;
+  color: white;
+}
+
+.container-fluid {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.games {
+  text-align: center;
+  background-color: #16a085;
+  font-size: 4em;
+}
+
+.settings {
+  text-align: center;
+  background-color: #34495e;
+  font-size: 4em;
+}
+
+.hero {
+  margin: auto auto;
+}

@@ -1,0 +1,12 @@
+@import url(bootstrap.min.css);
+@import url(font-awesome.min.css);
+
+html, body {
+  margin: 0;
+  margin-top: 6px;
+  padding: 0;
+}
+
+.thumbnail {
+  background-color: #cccccc;
+}
